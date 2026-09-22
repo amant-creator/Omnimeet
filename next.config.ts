@@ -2,7 +2,6 @@ import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
   reactStrictMode: false,
-  turbopack: {},
   allowedDevOrigins: [
     'localhost',
     'localhost:3000',

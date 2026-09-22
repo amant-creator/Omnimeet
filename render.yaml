@@ -3,7 +3,7 @@ services:
     name: omnimeet
     runtime: node
     plan: free          # change to 'starter' ($7/mo) to avoid spin-down
-    buildCommand: npm install && npm run build
+    buildCommand: npm install --include=dev && npm run build
     startCommand: node server.js
     healthCheckPath: /
     envVars:
