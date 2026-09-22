@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: omnimeet
+    runtime: node
+    plan: free          # change to 'starter' ($7/mo) to avoid spin-down
+    buildCommand: npm install && npm run build
+    startCommand: node server.js
+    healthCheckPath: /
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000          # Render's default port
+      - key: NEXTAUTH_SECRET
+        generateValue: true   # Render auto-generates a random secret
+      - key: NEXTAUTH_URL
+        sync: false           # You fill this in the dashboard after deploy
+      - key: ALLOWED_ORIGINS
+        sync: false           # You fill this in the dashboard after deploy
